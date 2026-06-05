@@ -1,8 +1,8 @@
-# Barbershop Booking Platform
+# Платформа записи в барбершоп
 
-A Spring Boot web application for managing client appointments in a barbershop. The project includes authentication, role-based access, appointment records, admin views, Thymeleaf templates, and PostgreSQL persistence.
+Веб-приложение для записи клиентов в барбершоп. Проект сделан как классическое Spring Boot MVC-приложение с регистрацией пользователей, авторизацией, ролями, административным разделом и хранением данных в PostgreSQL.
 
-## Tech Stack
+## Стек
 
 - Java 17
 - Spring Boot 2.6
@@ -12,46 +12,52 @@ A Spring Boot web application for managing client appointments in a barbershop. 
 - PostgreSQL
 - Maven
 
-## Features
+## Возможности
 
-- User registration and login
-- Appointment booking flow
-- User appointment history
-- Admin management page
-- Server-rendered UI with static assets
-- Environment-based database configuration
+- Регистрация и вход пользователей
+- Запись клиента на услугу
+- Просмотр записей пользователя
+- Административная страница со списком клиентских записей
+- Серверный HTML-интерфейс на Thymeleaf
+- Настройка подключения к БД через переменные окружения
 
-## Run Locally
+## Запуск
 
-Create a PostgreSQL database and configure connection values:
+Создайте базу PostgreSQL и при необходимости задайте переменные из `.env.example`.
 
-```bash
-cp .env.example .env
-```
-
-Run the application:
+Linux/macOS:
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-On Windows:
+Windows:
 
 ```powershell
 .\mvnw.cmd spring-boot:run
 ```
 
-## Configuration
+## Конфигурация
 
-The application reads database settings from environment variables:
-
-| Variable | Default |
+| Переменная | Значение по умолчанию |
 | --- | --- |
 | `DATABASE_URL` | `jdbc:postgresql://localhost:5432/barbershop` |
 | `DATABASE_USERNAME` | `postgres` |
 | `DATABASE_PASSWORD` | `postgres` |
 
-## Portfolio Notes
+## Структура
 
-This project demonstrates a classic monolithic Java web application with MVC structure, authentication, persistence, and server-side rendering.
+```text
+src/main/java/.../config       настройки безопасности
+src/main/java/.../model        модели домена
+src/main/java/.../repository   доступ к данным
+src/main/java/.../service      бизнес-логика
+src/main/java/.../web          MVC-контроллеры
+src/main/resources/templates   Thymeleaf-шаблоны
+src/main/resources/static      стили и изображения
+```
+
+## Для портфолио
+
+Проект показывает базовую архитектуру монолитного Java web-приложения: MVC, Spring Security, JPA, шаблоны, формы и PostgreSQL.
 
